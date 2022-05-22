@@ -13,7 +13,7 @@ const currentForecast = (latitude, longitude, callback) => {
       callback(`Unable to find location!`, undefined);
     } else {
       const currentForecast = body.current;
-      const forecast = `${currentForecast.weather_descriptions[0]}. The current temperature is ${currentForecast.temperature} degrees. The chance of precipitation is ${currentForecast.precip}%.`
+      const forecast = `${currentForecast.weather_descriptions[0]}. The current temperature is ${currentForecast.temperature} degrees, with a RealFeel temperature of ${currentForecast.feelslike} degrees. The wind is ${currentForecast.wind_speed} mph to the ${currentForecast.wind_dir}. The chance of precipitation is ${currentForecast.precip}%.`
       // console.log(body);
       callback(undefined, forecast);
     }
